@@ -43,3 +43,4 @@ def daily_min(data):
     :returns: An array of minimum values for each day
     """
     return np.min(data, axis=0)
+
