@@ -45,6 +45,12 @@ def daily_min(data):
     return np.min(data, axis=0)
 
 
+def daily_std_dev(data):
+    """Caclulates the daily standard diviation of a 2D inflammation data array
+    
+    """
+    return np.std(data, axis=0)
+
 def patient_normalise(data):
     """
     Normalise patient data from a 2D inflammation data array.
