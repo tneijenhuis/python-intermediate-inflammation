@@ -66,3 +66,15 @@ def test_patient_normalise(test, expected):
        Assumption that test accuracy of two decimal places is sufficient."""
     from inflammation.models import patient_normalise
     npt.assert_almost_equal(patient_normalise(np.array(test)), np.array(expected), decimal=2)
+
+
+@pytest.mark.parametrize(
+    "test, expected",
+    [
+        ([ [0, 1], [0, 1], [0, 1] ], [0, 0]),
+        ([ [0], [2]], [1]),
+    ])
+def test_daily_std_dev(test, expected):
+    """Test std function works for array of zeroes and positive integers."""
+    from inflammation.models import daily_std_dev
+    npt.assert_array_equal(daily_std_dev(np.array(test)), np.array(expected))
